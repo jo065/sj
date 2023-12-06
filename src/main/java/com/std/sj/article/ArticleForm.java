@@ -1,2 +1,17 @@
-package com.std.sj.article;public class ArticleFrom {
+package com.std.sj.article;
+
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class ArticleForm {
+
+    @NotEmpty(message = "제목은 필수 항목입니다.")
+    @Size(max = 25)
+    private String subject;
+    @NotEmpty(message = "내용은 필수 항목입니다.")
+    private String content;
 }
